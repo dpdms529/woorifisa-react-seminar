@@ -5,7 +5,7 @@ import SecondChild from './SecondChild';
 const Parent = () => {
     const [count, setCount] = useState(0);
     // const handleClick = () => {};
-    const handleClick = useCallback(() => {}, []);
+    // const handleClick = useCallback(() => {}, []);
 
     const item = {
         temp: 100,
@@ -20,7 +20,7 @@ const Parent = () => {
     return (
         <>
             <FirstChild count={count}/>
-            {/* <SecondChild onClick={handleClick}/> */}
+            {/* <SecondChild onClick={item}/> */}
             <SecondChild item={memTemp}/>
         </>
     ) 

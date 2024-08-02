@@ -12,5 +12,5 @@ const SecondChild = ({onClick, item}) => {
     )
 }
 
-// export default SecondChild;
-export default React.memo(SecondChild);
+export default SecondChild;
+// export default React.memo(SecondChild);
