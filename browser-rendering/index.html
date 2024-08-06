@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body id="root">
+    <!-- <button onclick="onClick()">click</button>
+    <ul id="ul"></ul> -->
+    <script type="text/babel">
+      const { useState } = React;
+
+      const Component = () => {
+        const [list, setList] = useState([]);
+
+        const onClick = () => {
+          console.time("onClick");
+
+          let newList = [...list];
+
+          for (let i = 0; i < 100; i++) {
+            newList.push(<li>{i}</li>);
+          }
+          setList(newList);
+          console.timeEnd("onClick");
+        };
+
+        return (
+          <>
+            <button onClick={onClick}>click</button>
+            <ul>{list}</ul>
+          </>
+        );
+      };
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<Component />);
+    </script>
+  </body>
+</html>

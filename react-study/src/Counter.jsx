@@ -1,31 +1,26 @@
-import { useState, useEffect } from "react";
-import Item from "./Item";
+import React, { useState, useEffect } from "react";
 
-const Counter = () => {
+const Counter = ({ root }) => {
+  console.log("Counter rendered");
+  console.log(root);
+
   const [count, setCount] = useState(0);
-  const [items, setItems] = useState([]);
-
-  console.log("counter rendered");
 
   const clickHandler = () => {
     setCount(count + 1);
-    let newItems = [...items];
-    const len = newItems.length + 1;
-    for (let i = len; i < len + 300; i++) {
-      newItems.push(<Item data={i} key={i}></Item>);
-      console.log(newItems);
-      setItems(newItems);
-    }
-    // setItems(newItems);
+    console.log(root);
   };
+
+  useEffect(() => {
+    console.log("Counter mounted");
+    console.log(root);
+  }, [count]);
 
   return (
     <div>
       <h1>Counter : {count}</h1>
       <button onClick={clickHandler}>click</button>
-      <ul>{items}</ul>
     </div>
   );
 };
-
 export default Counter;

@@ -1,7 +1,8 @@
 import React from "react";
 
-const Item = ({ data }) => {
-  console.log("item rendered");
+const Item = ({ data, root }) => {
+  // console.log(root);
+  // console.log("item rendered");
   return <li>{data}</li>;
 };
 

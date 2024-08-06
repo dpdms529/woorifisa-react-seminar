@@ -8,6 +8,6 @@ const root = document.getElementById("root");
 const reactDomRoot = ReactDOM.createRoot(root);
 console.log(reactDomRoot);
 
-reactDomRoot.render(<App />);
+reactDomRoot.render(<App root={reactDomRoot} />);
 
 // ReactDOM.createRoot(document.getElementById("root")).render(<App />);
